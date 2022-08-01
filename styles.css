@@ -1,83 +1,84 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
-html{
+html {
     min-height: 100%;
-    background-image: linear-gradient(0deg, black, green);
+    background-image: linear-gradient(0deg, black, rgb(0, 88, 0));
 }
 
-#nav-bar{
+#nav-bar {
     background-color: black;
     position: fixed;
     color: white;
-    text-align:left;
+    text-align: left;
     width: 200px;
     min-height: 100%;
 }
 
-.nav-list{
+.nav-list {
     list-style-type: none;
 }
 
-nav ul li{
+nav ul li {
     margin: 20px 0;
     margin-left: 20px;
     font-size: 13px;
 }
 
-.fa-solid, #logo{
+.fa-solid,
+#logo {
     margin-right: 10px;
     font-size: 15px;
 }
 
-#logo{
+#logo {
     margin-bottom: 20px;
     font-size: 30px;
 }
 
-#logolist{
+#logolist {
     font-size: 30px;
 }
 
-#top-nav-bar{
-    margin-left: 200px;
-    display: flex;
-    justify-content: flex-end;
+#top-nav-bar {
+    width: 100%;
+    position: fixed;
 }
 
-#upgrade{
-    margin: 5px 0;
-    margin-right: 20px;
-    margin-left: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    width: 90px;
-    cursor: pointer;
-    background-color: rgb(36, 36, 36);
-    color: white;
-}
-
-#upgrade:hover{
-    background-color: white;
-    color: black;
-    font-weight: 700;
-}
-
-#main-screen{
+#main-screen {
     margin-left: 200px;
     height: 300px;
     background-image: linear-gradient(180deg, green, rgb(0, 80, 0));
 }
 
-.banner{
+#upgrade {
+    margin: 5px 20px 5px 950px;
+    margin-right: 20px;
+    padding: 10px 20px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    width: 90px;
+    cursor: pointer;
+    background-color: rgb(0, 0, 0, 0);
     color: white;
 }
 
-.heart{
+#upgrade:hover {
+    background-color: white;
+    color: black;
+    font-weight: 700;
+}
+
+.banner {
+    margin-top: 50px;
+    color: white;
+    height: 200px;
+}
+
+.heart {
     margin-left: 40px;
     width: 200px;
     height: 200px;
@@ -86,17 +87,92 @@ nav ul li{
     float: left;
 }
 
-#banner-heart{
+#banner-heart {
     position: relative;
     left: 68px;
     top: 68px;
 }
 
-#banner-heading{
+#banner-heading {
     position: relative;
     top: 35px;
     left: 20px;
     font-size: 90px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 700;
 }
+
+#playlist{
+    margin-left: 225px;   
+}
+
+#heading{
+    color: grey;
+}
+
+#number{
+    width: 50px;
+}
+
+#title{
+    width: 50px;
+}
+
+#song{
+    width: 250px;
+}
+
+#album, #dateadded{
+    width: 250px;
+}
+
+#duration{
+    width: 100px;
+    text-align: right;
+}
+
+tr>:nth-child(1){
+    text-align: center;
+}
+
+tr>:nth-child(2){
+    text-align: center;
+    padding: 10px 10px;
+}
+
+tr>:nth-child(6){
+    text-align: right;
+    padding-right: 25px;
+}
+
+#heading{
+    position: sticky;
+    top: 50px;
+}
+
+.songlist{
+    color: white;
+}
+
+.songlist>:nth-child(1), .songlist>:nth-child(4), .songlist>:nth-child(5), .songlist>:nth-child(6){
+    color: grey;
+    font-size: 14px;
+}
+
+.songlist:hover{
+    background-color: rgba(255, 255, 255, 0.125);
+}
+
+.cover{
+    width: 45px;
+}
+
+.name{
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.author{
+    color: grey;
+}
+

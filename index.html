@@ -7,11 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify-Clone</title>
     <link rel="stylesheet" href="styles.css">
-
+    <link rel="icon" href="images/favicon.ico">
 </head>
 
 <body>
     <nav id="nav-bar">
+        <!-- left verticle navigation bar -->
         <ul class="nav-list">
             <li id="logolist"><i class="fa-brands fa-spotify" id="logo"></i>Spotify</li>
             <li><i class="fa-solid fa-house" id="home"></i>Home</li>
@@ -20,19 +21,154 @@
             <li><i class="fa-solid fa-heart" id="liked"></i>Liked Songs</li>
         </ul>
     </nav>
-    
-    <div id="main-screen">    
+
+    <div id="main-screen">
+        <!-- the main content -->
         <div id="top-nav-bar">
+            <!-- top navigation bar for upgrade button and login id (to be added later) -->
             <button id="upgrade">Upgrade</button>
         </div>
         <br>
         <div class="banner">
+            <!-- top banner of 'liked songs' -->
             <div class="heart">
                 <i class="fa-solid fa-heart fa-4x" id="banner-heart"></i>
             </div>
             <span id="banner-heading">Liked Songs</span>
         </div>
-    </div>
+    </div><br>
+
+    <table id="playlist" cellspacing="0">
+        <tr id="heading">
+            <td id="number">#</td>
+            <td id="title">TITLE</td>
+            <td id="song"></td>
+            <td id="album">ALBUM</td>
+            <td id="dateadded">DATE ADDED</td>
+            <td id="duration">DURATION</td>
+        </tr>
+        <tr class="songlist">
+            <td><big>1</big></td>
+            <td><img src="images/Attention.png" class="cover"></td>
+            <td>
+                <span class="name">Attention</span><br>
+                <small class="author">Charlie Puth</small>
+            </td>
+            <td>Attention</td>
+            <td>1 day ago</td>
+            <td>11:11</td>
+        </tr>
+        <tr class="songlist">
+            <td><big>2</big></td>
+            <td><img src="images/Blindinglights.png" class="cover"></td>
+            <td>
+                <span class="name">Blinding Lights</span><br>
+                <small class="author">The Weeknd</small>
+            </td>
+            <td>Blinding Lights</td>
+            <td>1 day ago</td>
+            <td>22:22</td>
+        </tr>
+        <tr class="songlist">
+            <td><big>3</big></td>
+            <td><img src="images/Hymnfortheweekend.png" class="cover"></td>
+            <td>
+                <span class="name">Hymn for the Weekend</span><br>
+                <small class="author">Coldplay</small>
+            </td>
+            <td>A Head Full of Dreams</td>
+            <td>1 day ago</td>
+            <td>33:33</td>
+        </tr>
+        <tr class="songlist">
+            <td><big>4</big></td>
+            <td><img src="images/Matargashti.png" class="cover"></td>
+            <td>
+                <span class="name">Matargashti</span><br>
+                <small class="author">Mohit Chauhan</small>
+            </td>
+            <td>Tamasha</td>
+            <td>1 day ago</td>
+            <td>44:44</td>
+        </tr>
+        <tr class="songlist">
+            <td><big>5</big></td>
+            <td><img src="images/Pasoori.png" class="cover"></td>
+            <td>
+                <span class="name">Pasoori</span><br>
+                <small class="author">Shae Gill, Ali Sethi</small>
+            </td>
+            <td>Pasoori</td>
+            <td>1 day ago</td>
+            <td>55:55</td>
+        </tr>
+        <tr class="songlist">
+            <td><big>6</big></td>
+            <td><img src="images/Realslimshady.png" class="cover"></td>
+            <td>
+                <span class="name">The Real Slim Shady</span><br>
+                <small class="author">Eminem</small>
+            </td>
+            <td>The Marshall Mathers LP</td>
+            <td>1 day ago</td>
+            <td>66:66</td>
+        </tr>
+        <tr class="songlist">
+            <td><big>7</big></td>
+            <td><img src="images/Shapeofyou.png" class="cover"></td>
+            <td>
+                <span class="name">Shape of You</span><br>
+                <small class="author">Ed Sheeran</small>
+            </td>
+            <td>Divide</td>
+            <td>1 day ago</td>
+            <td>77:77</td>
+        </tr>
+        <tr class="songlist">
+            <td><big>8</big></td>
+            <td><img src="images/Starboy.png" class="cover"></td>
+            <td>
+                <span class="name">Starboy</span><br>
+                <small class="author">The Weeknd</small>
+            </td>
+            <td>Starboy</td>
+            <td>1 day ago</td>
+            <td>88:88</td>
+        </tr>
+        <tr class="songlist">
+            <td><big>9</big></td>
+            <td><img src="images/Toallofyou.png" class="cover"></td>
+            <td>
+                <span class="name">To All of You</span><br>
+                <small class="author">Syd Matters</small>
+            </td>
+            <td>Life is Strange</td>
+            <td>1 day ago</td>
+            <td>99:99</td>
+        </tr>
+        <tr class="songlist">
+            <td><big>10</big></td>
+            <td><img src="images/Uddgaye.png" class="cover"></td>
+            <td>
+                <span class="name">Udd Gaye</span><br>
+                <small class="author">Ritviz</small>
+            </td>
+            <td>Ved</td>
+            <td>1 day ago</td>
+            <td>10:10</td>
+        </tr>
+        <tr class="songlist">
+            <td><big>11</big></td>
+            <td><img src="images/Wishlist.png" class="cover"></td>
+            <td>
+                <span class="name">Wishlist</span><br>
+                <small class="author">Dino James, Kaprila</small>
+            </td>
+            <td>Wishlist</td>
+            <td>1 day ago</td>
+            <td>11:11</td>
+        </tr>
+    </table>
 
     <script src="https://kit.fontawesome.com/221ba7fb20.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>

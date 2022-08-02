@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify-Clone</title>
+    <title>Spomtify</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="images/favicon.ico">
 </head>
 
 <body>
     <nav id="nav-bar">
-        <!-- left verticle navigation bar -->
         <ul class="nav-list">
-            <li id="logolist"><i class="fa-brands fa-spotify" id="logo"></i>Spotify</li>
+            <li id="logolist"><i class="fa-brands fa-spotify" id="logo"></i>Spomtify</li>
             <li><i class="fa-solid fa-house" id="home"></i>Home</li>
             <li><i class="fa-solid fa-magnifying-glass" id="search"></i>Search</li><br>
             <li><i class="fa-solid fa-circle-plus" id="create"></i>Create Playlist</li>
@@ -23,14 +22,11 @@
     </nav>
 
     <div id="main-screen">
-        <!-- the main content -->
         <div id="top-nav-bar">
-            <!-- top navigation bar for upgrade button and login id (to be added later) -->
             <button id="upgrade">Upgrade</button>
         </div>
         <br>
         <div class="banner">
-            <!-- top banner of 'liked songs' -->
             <div class="heart">
                 <i class="fa-solid fa-heart fa-4x" id="banner-heart"></i>
             </div>
@@ -169,6 +165,28 @@
             <td>11:11</td>
         </tr>
     </table>
+
+    <div id="player">
+        <div id="currsong">
+            <img src="images/Attention.png" id="song">
+            <div class="currname">Attention</div>
+            <small class="currauthor">Charlie Puth</small>
+        </div>
+
+        <div class="centered">
+            <i class="fa-solid fa-backward-step"></i>
+            <i class="fa-solid fa-circle-play"></i>
+            <i class="fa-solid fa-forward-step"></i><br>
+            <small id="currtime">00:00</small>
+            <input type="range" id="bar">
+            <small id="totaltime">03:45</small>
+        </div>
+
+        <div id="tools">
+            <i class="fa-solid fa-volume-high"></i>
+            <input type="range" id="volumebar">
+        </div>
+    </div>
 
     <script src="https://kit.fontawesome.com/221ba7fb20.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>

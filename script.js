@@ -16,15 +16,19 @@ let songs = [
 
 let songindex = 0;
 let totalsongs = 11;
+let loop = 1;
 let AudioElement = new Audio(songs[songindex].filepath);
 let playpausebtn = document.getElementById("playpausebtn");
 let prevbtn = document.getElementById("prevbtn");
 let nextbtn = document.getElementById("nextbtn");
+let loopbtn = document.getElementById("loopbtn");
+let shufflebtn = document.getElementById("shufflebtn");
 let bar = document.getElementById("bar");
 let volumebar = document.getElementById("volumebar");
 let totaltime = document.getElementById("totaltime");
 let currtime = document.getElementById("currtime");
 let details = document.getElementById("currsong");
+let heading = document.getElementById("heading");
 
 function updatetime() {
     let mins1 = parseInt(AudioElement.currentTime / 60);
@@ -35,13 +39,44 @@ function updatetime() {
         currtime.innerHTML = `0${mins1}:0${secs1}`;
     else
         currtime.innerHTML = `0${mins1}:${secs1}`;
-    totaltime.innerHTML = `0${mins2}:${secs2}`;
+    if (secs2 < 10)
+        totaltime.innerHTML = `0${mins2}:0${secs2}`;
+    else
+        totaltime.innerHTML = `0${mins2}:${secs2}`;
 }
 
 function changedetails(index) {
     details.childNodes[1].src = songs[index].coverpath;
     details.childNodes[3].innerHTML = songs[index].songname;
     details.childNodes[5].innerHTML = songs[index].singer;
+}
+
+function nextsong(){
+    if (songindex != totalsongs - 1 && loop==0) {
+        AudioElement.src = songs[++songindex].filepath;
+        AudioElement.play();
+    }
+    else if(loop==1){
+        songindex = (songindex+1)%totalsongs;
+        AudioElement.src = songs[songindex].filepath;
+        AudioElement.play();
+    }
+    changedetails(songindex);
+    if(playpausebtn.classList.contains("fa-circle-play") && !AudioElement.paused){
+        playpausebtn.classList.remove("fa-circle-play");
+        playpausebtn.classList.add("fa-circle-pause");
+    }
+}
+
+function clickplay(index){
+    songindex= parseInt(index.childNodes[1].innerHTML)-1;
+    AudioElement.src = songs[songindex].filepath;
+    AudioElement.play();
+    changedetails(songindex);
+    if(playpausebtn.classList.contains("fa-circle-play")){
+        playpausebtn.classList.remove("fa-circle-play");
+        playpausebtn.classList.add("fa-circle-pause");
+    }
 }
 
 playpausebtn.addEventListener("click", () => {
@@ -67,13 +102,22 @@ prevbtn.addEventListener("click", () => {
         AudioElement.play();
         changedetails(songindex);
     }
+    if(playpausebtn.classList.contains("fa-circle-play") && !AudioElement.paused){
+        playpausebtn.classList.remove("fa-circle-play");
+        playpausebtn.classList.add("fa-circle-pause");
+    }
 })
 
-nextbtn.addEventListener("click", () => {
-    if (songindex != totalsongs - 1) {
-        AudioElement.src = songs[++songindex].filepath;
-        AudioElement.play();
-        changedetails(songindex);
+nextbtn.onclick = function(){nextsong()};
+
+loopbtn.addEventListener("click", ()=>{
+    if(loop==1){
+        loop=0;
+        loopbtn.style.color = "grey";
+    }
+    else{
+        loop=1;
+        loopbtn.style.color = "white";
     }
 })
 
@@ -81,11 +125,7 @@ AudioElement.addEventListener("timeupdate", () => {
     bar.value = parseInt(AudioElement.currentTime * 100 / AudioElement.duration);
     updatetime();
     if (AudioElement.currentTime == AudioElement.duration) {
-        if (songindex != totalsongs - 1) {
-            AudioElement.src = songs[++songindex].filepath;
-            AudioElement.play();
-            changedetails(songindex);
-        }
+        nextsong();
     }
 })
 
@@ -96,4 +136,13 @@ bar.addEventListener("change", () => {
 
 volumebar.addEventListener("change", () => {
     AudioElement.volume = volumebar.value / 100;
+})
+
+window.addEventListener("scroll", ()=>{
+    if(parseInt(window.scrollY) >= 320){
+        heading.style.backgroundColor = "rgb(22, 22, 22)";
+    }
+    else{
+        heading.style.backgroundColor = "";
+    }
 })

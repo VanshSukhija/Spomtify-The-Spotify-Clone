@@ -28,8 +28,7 @@ nav ul li {
     font-size: 13px;
 }
 
-.fa-solid,
-#logo {
+.fa-solid, #logo {
     margin-right: 10px;
     font-size: 15px;
 }
@@ -51,8 +50,8 @@ nav ul li {
 
 #top-nav-bar {
     width: 100%;
-    position: fixed;
-    padding: 5px 0;
+    padding: 5.5px 0;
+    /* background-color: rgb(0, 80, 0); */
 }
 
 #upgrade {
@@ -74,7 +73,7 @@ nav ul li {
 }
 
 .banner {
-    margin-top: 50px;
+    margin-top: 10px;
     color: white;
     height: 200px;
 }
@@ -104,65 +103,78 @@ nav ul li {
 }
 
 #playlist {
-    margin-left: 225px;
+    margin-left: 230px;
     margin-bottom: 100px;
+    width: 1000px;
 }
 
 #heading {
-    color: grey;
+    color: rgb(172, 172, 172);
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    font-weight: bold;
+    top: 0;
+    width: 100%;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid grey;
 }
 
-#number {
+#number, #title {
     width: 50px;
+    text-align: center;
 }
 
-#title {
-    width: 50px;
-}
-
-#song {
-    width: 250px;
-}
-
-#album,
-#dateadded {
+#song, #album, #dateadded {
     width: 250px;
 }
 
 #duration {
     width: 100px;
     text-align: right;
+    margin-right: 25px;
 }
 
-tr>:nth-child(1) {
-    text-align: center;
-}
-
-tr>:nth-child(2) {
-    text-align: center;
-    padding: 10px 10px;
-}
-
-tr>:nth-child(6) {
-    text-align: right;
-    padding-right: 25px;
-}
-
-#heading {
-    position: sticky;
-    top: 50px;
-}
 
 .songlist {
+    padding: 10px 0 5px;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.songlist>:nth-child(1),
-.songlist>:nth-child(4),
-.songlist>:nth-child(5),
-.songlist>:nth-child(6) {
-    color: grey;
+.songlist>:nth-child(1){
+    color: rgb(172, 172, 172);
+    font-size: 18px;
+    width: 50px;
+    text-align: center;
+}
+
+.songlist>:nth-child(2){
+    width: 50px;
+    text-align: center;
+}
+
+.songlist>:nth-child(3){
+    width: 250px;
+}
+
+.songlist>:nth-child(4), .songlist>:nth-child(5), .songlist>:nth-child(6) {
+    color: rgb(172, 172, 172);
+    width: 250px;
     font-size: 14px;
+}
+
+.songlist>:nth-child(1), .songlist>:nth-child(4), .songlist>:nth-child(5), .songlist>:nth-child(6) {
+    padding-top: 12px;
+}
+
+.songlist>:nth-child(6) {
+    width: 100px;
+    text-align: right;
+    margin-right: 25px;
 }
 
 .songlist:hover {
@@ -170,7 +182,7 @@ tr>:nth-child(6) {
 }
 
 .cover {
-    width: 45px;
+    width: 50px;
 }
 
 .name {
@@ -179,7 +191,7 @@ tr>:nth-child(6) {
 }
 
 .author {
-    color: grey;
+    color: rgb(172, 172, 172);
 }
 
 #player {
@@ -244,9 +256,12 @@ tr>:nth-child(6) {
     font-size: 35px;
 }
 
-.fa-backward-step,
-.fa-forward-step {
+.fa-backward-step, .fa-forward-step {
     font-size: 25px;
+}
+
+.fa-arrow-rotate-left, .fa-shuffle {
+    font-size: 17px;
 }
 
 .centered>small {

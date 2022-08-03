@@ -194,14 +194,13 @@ tr>:nth-child(6) {
 }
 
 #currsong {
-    width: 30%;
+    width: 25%;
     padding: 10px 0 10px 10px;
 }
 
 #currsong>#gif {
     width: 60px;
     position: absolute;
-    /* opacity: 50%; */
     margin-top: 10px;
 }
 
@@ -229,7 +228,7 @@ tr>:nth-child(6) {
 
 .centered {
     text-align: center;
-    width: 40%;
+    width: 50%;
 }
 
 .centered>.fa-solid {
@@ -237,7 +236,11 @@ tr>:nth-child(6) {
     color: white;
 }
 
-.fa-circle-play {
+.centered>.fa-solid:hover{
+    cursor: pointer;
+}
+
+.fa-circle-play, .fa-circle-pause {
     font-size: 35px;
 }
 
@@ -251,13 +254,13 @@ tr>:nth-child(6) {
 }
 
 #bar {
-    width: 80%;
+    width: 70%;
     height: 4px;
     border-radius: 2px;
 }
 
 #tools {
-    width: 30%;
+    width: 25%;
     padding: 10px 10px 10px 0;
     text-align: right;
 }

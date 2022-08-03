@@ -174,17 +174,17 @@
         </div>
 
         <div class="centered">
-            <i class="fa-solid fa-backward-step"></i>
-            <i class="fa-solid fa-circle-play"></i>
-            <i class="fa-solid fa-forward-step"></i><br>
+            <i class="fa-solid fa-backward-step" id="prevbtn"></i>
+            <i class="fa-solid fa-circle-play" id="playpausebtn"></i>
+            <i class="fa-solid fa-forward-step" id="nextbtn"></i><br>
             <small id="currtime">00:00</small>
-            <input type="range" id="bar">
-            <small id="totaltime">03:45</small>
+            <input type="range" id="bar" min="0" max="100" value="0">
+            <small id="totaltime">00:11</small>
         </div>
 
         <div id="tools">
             <i class="fa-solid fa-volume-high"></i>
-            <input type="range" id="volumebar">
+            <input type="range" id="volumebar" min="0" max="100" value="100">
         </div>
     </div>
 

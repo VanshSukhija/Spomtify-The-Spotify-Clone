@@ -17,6 +17,7 @@ let songs = [
 let songindex = 0;
 let totalsongs = 11;
 let loop = 1;
+let shuffle = 1;
 let AudioElement = new Audio(songs[songindex].filepath);
 let playpausebtn = document.getElementById("playpausebtn");
 let prevbtn = document.getElementById("prevbtn");
@@ -52,15 +53,17 @@ function changedetails(index) {
 }
 
 function nextsong(){
-    if (songindex != totalsongs - 1 && loop==0) {
-        AudioElement.src = songs[++songindex].filepath;
-        AudioElement.play();
+    if(shuffle==1){
+        songindex = Math.floor(Math.random()*10);
+    }
+    else if (songindex != totalsongs - 1 && loop==0) {
+        songindex++;
     }
     else if(loop==1){
         songindex = (songindex+1)%totalsongs;
-        AudioElement.src = songs[songindex].filepath;
-        AudioElement.play();
     }
+    AudioElement.src = songs[songindex].filepath;
+    AudioElement.play();
     changedetails(songindex);
     if(playpausebtn.classList.contains("fa-circle-play") && !AudioElement.paused){
         playpausebtn.classList.remove("fa-circle-play");
@@ -118,6 +121,17 @@ loopbtn.addEventListener("click", ()=>{
     else{
         loop=1;
         loopbtn.style.color = "white";
+    }
+})
+
+shufflebtn.addEventListener("click", ()=>{
+    if(shuffle==1){
+        shuffle=0;
+        shufflebtn.style.color = "grey";
+    }
+    else{
+        shuffle=1;
+        shufflebtn.style.color = "white";
     }
 })
 
